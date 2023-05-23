@@ -26,7 +26,7 @@ const Footer = () => {
             </ListItem>
           </List>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="center" marginTop="15px">
+        <Box display="flex" alignItems="center" justifyContent="center" marginTop="15px" >
           <Typography sx={{ color: "white" }}>© Copyright LVHB Tech Group 2023</Typography>
         </Box>
       </Box>
@@ -35,3 +35,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
