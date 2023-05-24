@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Roboto:wght@700;900&display=swap');
+
+.btn{
+    background-color: #53871c;
+    padding: 0.8rem;
+    color: white;
+    border: 0px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;  
+    font-weight: 500;
+    font-size: 1rem;
+}
+.btn:hover{
+    background-color: #53871cc2;
+
+}

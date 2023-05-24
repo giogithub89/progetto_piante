@@ -1,13 +1,15 @@
 import { Box } from "@mui/material";
 import React from "react";
-import ChiSiamo from "../../Component/Homepage/chiSiamo";
-import ComeFunziona from "../../Component/Homepage/comeFunziona";
+import ChiSiamo from "./ChiSiamo";
+import ComeFunziona from "./ComeFunziona";
+import Hero from "./Hero/Hero";
 
 const Homepage = () => {
   return (
     <Box>
-      <ChiSiamo />
-      <ComeFunziona />
+      <Hero></Hero>
+      <ChiSiamo></ChiSiamo>
+      <ComeFunziona></ComeFunziona>
     </Box>
   );
 };

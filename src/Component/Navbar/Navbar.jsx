@@ -1,6 +1,8 @@
 import "./Navbar.css";
 import { Link, Outlet } from "react-router-dom";
 import { useRef } from "react";
+import logo from './logo.png'
+
 
 function Navbar() {
   const Span1 = useRef(0);
@@ -45,23 +47,19 @@ function Navbar() {
     <>
       <>
         <div className="navbar">
-          <span className="logo">BIOSPHERE</span>
-
-          <div className="hamburger" onClick={() => handleClick()}>
-            <span className="span1" ref={Span1}></span>
-            <span className="span2" ref={Span2}></span>
-            <span className="span3" ref={Span3}></span>
+          <div className="ham">
+            <div className="logo"></div>
+            <div className="hamburger" onClick={() => handleClick()}>
+              <span className="span1" ref={Span1}></span>
+              <span className="span2" ref={Span2}></span>
+              <span className="span3" ref={Span3}></span>
+            </div>
           </div>
+
 
           <div>
             <ul className="nascosto" id="ulHamburger">
-              <li
-                onClick={() => {
-                  topFunction();
-                  handleClick();
-                }}>
-                <Link to="/"> Home</Link>
-              </li>
+              <li onClick={() => { topFunction(); handleClick() }}><Link to="/"> Home</Link></li>
               <li>
                 <a>Esplora</a>
               </li>

@@ -1,8 +1,8 @@
 import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
-import greenLines from "../../resources/bgPiantaRight.jpg";
+import greenLines from "../../../resources/bgPianta.jpg";
 
-const ComeFunziona = () => {
+const ChiSiamo = () => {
   return (
     <Paper
       sx={{
@@ -16,7 +16,7 @@ const ComeFunziona = () => {
       <Box display="flex" p="40px 20px" flexDirection="column" justifyContent="center" marginTop="25px">
         <Box display="flex" justifyContent="center" marginBottom="40px">
           <Typography variant="h2" textTransform="uppercase">
-            come funziona
+            che cosa è Biosphere?
           </Typography>
         </Box>
         <Box marginBottom="60px">
@@ -34,4 +34,4 @@ const ComeFunziona = () => {
   );
 };
 
-export default ComeFunziona;
+export default ChiSiamo;

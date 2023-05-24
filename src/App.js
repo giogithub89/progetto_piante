@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage/Homepage";
 import Layout from "./pages/Layout";
-import Categories from "./pages/Categories/Categories";
+import Homepage from "./pages/homepage/Homepage";
 
 function App() {
   return (
@@ -9,7 +8,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
-          <Route path={"categories"} element={<Categories />} />
         </Route>
       </Routes>
     </div>

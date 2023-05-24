@@ -3,7 +3,10 @@
   margin: 0;
   padding: 0;
 }
+html{
+  scroll-behavior: smooth;
 
+}
 :root {
   --primary: #53871c;
   --secondary: #0ba5e7;
