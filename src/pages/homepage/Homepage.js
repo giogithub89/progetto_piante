@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
-import ChiSiamo from "./chiSiamo";
-import ComeFunziona from "./comeFunziona";
+import ChiSiamo from "../../Component/Homepage/chiSiamo";
+import ComeFunziona from "../../Component/Homepage/comeFunziona";
 
 const Homepage = () => {
   return (
