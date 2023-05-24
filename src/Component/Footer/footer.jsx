@@ -5,7 +5,7 @@ import ListItem from "@mui/material/ListItem";
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "var(--primary)" }} width="100%" height="40vh">
+    <Box sx={{ backgroundColor: "var(--primary)" }} width="100%">
       <Box p={"50px"}>
         <Box display="flex" alignItems="center">
           <List sx={{ flex: 1, color: "white" }}>
@@ -26,7 +26,7 @@ const Footer = () => {
             </ListItem>
           </List>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="center" marginTop="15px" >
+        <Box display="flex" alignItems="center" justifyContent="center" marginTop="15px">
           <Typography sx={{ color: "white" }}>© Copyright LVHB Tech Group 2023</Typography>
         </Box>
       </Box>
@@ -35,4 +35,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
