@@ -1,11 +1,21 @@
-import { Box, ListItemText, Typography } from "@mui/material";
+import { Box, ListItemText, Paper, Typography } from "@mui/material";
 import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import leaf from "../../resources/leaf.jpg";
+import abstract from "../../resources/abstract_bbg.jpeg";
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "var(--primary)" }} width="100%" height="40vh">
+    <Paper
+      sx={{
+        backgroundImage: `url(${abstract})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        borderRadius: 0,
+      }}
+      width="100%">
       <Box p={"50px"}>
         <Box display="flex" alignItems="center">
           <List sx={{ flex: 1, color: "white" }}>
@@ -26,13 +36,12 @@ const Footer = () => {
             </ListItem>
           </List>
         </Box>
-        <Box display="flex" alignItems="center" justifyContent="center" marginTop="15px" >
+        <Box display="flex" alignItems="center" justifyContent="center" marginTop="15px">
           <Typography sx={{ color: "white" }}>© Copyright LVHB Tech Group 2023</Typography>
         </Box>
       </Box>
-    </Box>
+    </Paper>
   );
 };
 
 export default Footer;
-
