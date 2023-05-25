@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material";
 import React from "react";
-import greenLines from "../../../resources/bgPianta.jpg";
+import greenLines from "../../resources/bgPianta.jpg";
 
 const ChiSiamo = () => {
   return (
