@@ -3,7 +3,7 @@ import React from "react";
 import ChiSiamo from "../../Component/homepage/ChiSiamo";
 import ComeFunziona from "../../Component/homepage/ComeFunziona";
 import SezImgaes from "../../Component/homepage/SezImgaes";
-import Hero from "../homepage/Hero/index";
+import Hero from "../../Component/homepage/Hero/Hero";
 
 const Homepage = () => {
   return (
