@@ -11,9 +11,14 @@ html{
   --primary: #53871c;
   --secondary: #0ba5e7;
   --primary-100: #ace1af;
+  --primary-200: #b5ca8d;
+  --primary-300: #8bb174;
+  --primary-800: #2a4849;
   --secondary-100: #88edf8;
-  --secondary-300: #6699cc;
-  --secondary-900: #05445e;
+  --secondary-300: #91c4f2;
+  --secondary-400: #6699cc;
+  --secondary-700: #05445e;
+  --secondary-900: #222e50;
 }
 
 body {
@@ -22,6 +27,12 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+h2 {
+  color: var(--secondary-700);
+}
+h5 {
+  color: var(--secondary-700);
 }
 
 code {
