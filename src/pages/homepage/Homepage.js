@@ -11,6 +11,7 @@ const Homepage = () => {
       <ChiSiamo />
       <ComeFunziona />
       <SezImgaes />
+      {/* <SezImgaes /> */}
     </Box>
   );
 };
