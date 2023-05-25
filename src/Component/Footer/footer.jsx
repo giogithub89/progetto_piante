@@ -1,9 +1,18 @@
-import { Box, ListItemText, Paper, Typography } from "@mui/material";
+import { Box, Link, ListItemText, Paper, Typography } from "@mui/material";
 import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import leaf from "../../resources/leaf.jpg";
 import abstract from "../../resources/abstract_bbg.jpeg";
+
+const ListItemCustom = ({ href, text, onClick }) => {
+  return (
+    <ListItemText>
+      <Link href={href} underline="none" color="inherit" onClick={onClick}>
+        {text}
+      </Link>
+    </ListItemText>
+  );
+};
 
 const Footer = () => {
   return (
@@ -20,16 +29,17 @@ const Footer = () => {
         <Box display="flex" alignItems="center">
           <List sx={{ flex: 1, color: "white" }}>
             <Typography variant="h4">Mappa del sito</Typography>
-            <ListItem sx={{ flexDirection: "column", alignItems: "start" }}>
-              <ListItemText>Homepage</ListItemText>
-              <ListItemText>Contatti</ListItemText>
-              <ListItemText>Esplora</ListItemText>
+            <ListItem sx={{ flexDirection: "column", alignItems: "start", pl: "0px" }}>
+              <ListItemCustom text="Homepage" href={"#"} />
+              <ListItemCustom text="Esplora" href={"#"} />
+              <ListItemCustom text="Termini e Condizioni" href={"#"} />
+              <ListItemCustom text="Privacy" href={"#"} />
             </ListItem>
           </List>
 
           <List sx={{ flex: 1, color: "white" }}>
             <Typography variant="h4">Social</Typography>
-            <ListItem sx={{ flexDirection: "column", alignItems: "start" }}>
+            <ListItem sx={{ flexDirection: "column", alignItems: "start", pl: "0px" }}>
               <ListItemText>Instagram</ListItemText>
               <ListItemText>Facebook</ListItemText>
               <ListItemText>Bigbag</ListItemText>
