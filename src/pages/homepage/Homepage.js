@@ -3,10 +3,12 @@ import React from "react";
 import ChiSiamo from "../../Component/homepage/chiSiamo";
 import ComeFunziona from "../../Component/homepage/comeFunziona";
 import SezImgaes from "../../Component/homepage/sezImgaes";
+import Hero from "./Hero/index";
 
 const Homepage = () => {
   return (
     <Box>
+      <Hero />
       <ChiSiamo />
       <ComeFunziona />
       <SezImgaes />
