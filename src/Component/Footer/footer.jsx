@@ -16,7 +16,7 @@ const ListItemCustom = ({ href, text, onClick }) => {
 
 const Footer = () => {
   return (
-    <Paper
+    <Paper id="social"
       sx={{
         backgroundImage: `url(${abstract})`,
         backgroundPosition: "center",
@@ -26,9 +26,9 @@ const Footer = () => {
       }}
       width="100%">
       <Box p={"50px"}>
-        <Box display="flex" alignItems="center">
+        <Box display="flex" alignItems="center" >
           <List sx={{ flex: 1, color: "white" }}>
-            <Typography variant="h4">Mappa del sito</Typography>
+            <Typography variant="h4" >Mappa del sito</Typography>
             <ListItem sx={{ flexDirection: "column", alignItems: "start", pl: "0px" }}>
               <ListItemCustom text="Homepage" href={"#"} />
               <ListItemCustom text="Esplora" href={"#"} />
@@ -38,7 +38,7 @@ const Footer = () => {
           </List>
 
           <List sx={{ flex: 1, color: "white" }}>
-            <Typography variant="h4">Social</Typography>
+            <Typography variant="h4" >Social</Typography>
             <ListItem sx={{ flexDirection: "column", alignItems: "start", pl: "0px" }}>
               <ListItemText>Instagram</ListItemText>
               <ListItemText>Facebook</ListItemText>

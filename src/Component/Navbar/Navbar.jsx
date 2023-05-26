@@ -38,11 +38,7 @@ function Navbar() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     window.pageYOffset = 0;
   }
-  function topFunction2() {
-    document.body.scrollTop = 20; // For Safari
-    document.documentElement.scrollTop = 500; // For Chrome, Firefox, IE and Opera
-    window.pageYOffset = 990;
-  }
+
   return (
     <>
       <>
@@ -61,13 +57,13 @@ function Navbar() {
             <ul className="nascosto" id="ulHamburger">
               <li onClick={() => { topFunction(); handleClick() }}><Link to="/"> Home</Link></li>
               <li>
-                <a>Esplora</a>
+                <a> <Link to={'esplora'} >Esplora</Link> </a>
               </li>
               <li>
                 <a>Chi siamo</a>
               </li>
               <li>
-                <a>Contatti</a>
+                <a href="#social">Contatti</a>
               </li>
             </ul>
           </div>
