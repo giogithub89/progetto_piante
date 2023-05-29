@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -24,6 +25,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,6 +38,7 @@ h5 {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+
 }
 
 /* Handle */
@@ -47,4 +50,5 @@ code {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+
 }
