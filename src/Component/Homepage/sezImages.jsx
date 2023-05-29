@@ -4,7 +4,7 @@ import foto1 from "../../resources/galleria/Cyprinus.jpeg";
 import foto2 from "../../resources/galleria/Sciurus carolinensis .jpg";
 import foto3 from "../../resources/galleria/Geranium nodosum.jpg";
 
-const SezImgaes = () => {
+const SezImages = () => {
   return (
     <Box display="flex" p="40px 20px" flexDirection="column" justifyContent="center" marginTop="25px">
       <Box display="flex" justifyContent="center" marginBottom="40px">
@@ -41,4 +41,4 @@ const SezImgaes = () => {
   );
 };
 
-export default SezImgaes;
+export default SezImages;
