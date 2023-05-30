@@ -28,7 +28,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h2 {
-  color: var(--secondary-700);
+  color:rgb(252, 0, 0);
 }
 h5 {
   color: var(--secondary-700);

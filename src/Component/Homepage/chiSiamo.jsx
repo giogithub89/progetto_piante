@@ -4,7 +4,7 @@ import greenLines from "../../resources/bgPianta.jpg";
 
 const ChiSiamo = () => {
   return (
-    <Paper
+    <Paper 
       sx={{
         backgroundImage: `url(${greenLines})`,
         backgroundPosition: "bottom",
