@@ -1,0 +1,39 @@
+{
+  "id": 1,
+  "city": "Torino",
+  "categories": [
+    { "id": 1, "name": "Flora", "icon": null, "plants": [] },
+    {
+      "id": 2,
+      "name": "Fauna",
+      "icon": null,
+      "animals": [
+        {
+          "id": 21,
+          "mammiferi": [
+            { "id": 34, "name": "Cane", "image": "url", "caption": "" },
+            { "id": 35, "name": "Gatto", "image": "url", "caption": "" }
+          ]
+        },
+        {
+          "id": 41,
+          "invertebrati": [
+            { "id": 44, "name": "ragno", "image": "url", "caption": "" },
+            { "id": 45, "name": "serpente", "image": "url", "caption": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Luoghi",
+      "places": [
+        {
+          "id": 11,
+          "centro_storico": [{ "id": 34, "name": "Piazza Vittorio", "image": "url", "caption": "", "coridnate": "" }]
+        },
+        { "id": 12, "laghi": [] }
+      ]
+    }
+  ]
+}

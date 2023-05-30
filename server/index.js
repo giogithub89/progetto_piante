@@ -23,13 +23,10 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
 mongoose
-  .connect(
-    "mongodb+srv://testDashboard:testDashboard@clusterdashboard.0g0wvic.mongodb.net/?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("mongodb+srv://admin:OTorqJdZXFOC3vkj@clusterdashboard.0g0wvic.mongodb.net/?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
