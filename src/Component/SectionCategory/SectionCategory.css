@@ -11,7 +11,7 @@
 .SectionCategory div {
     padding: 2rem;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.664);
+    background-color: rgba(0, 0, 0, 0.767);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -19,7 +19,7 @@
     width: 25rem;
     color: white;
     text-align: center;
-    height: 15rem;
+    height: 8rem;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -31,11 +31,8 @@
 
 
 .SectionCategory div:hover {
-    background-color: rgba(0, 0, 0, 0.37);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-
+    background-color: rgba(0, 0, 0, 0.226);
 }
-
 
 
 

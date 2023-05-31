@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css"
-import Button from "../../../Component/Button/Button";
+import Button from "../../Button/Button";
 
 
 const Hero = () => {

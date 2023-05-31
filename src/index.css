@@ -3,9 +3,11 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 :root {
   --primary: #53871c;
   --secondary: #0ba5e7;
@@ -18,6 +20,7 @@ html {
   --secondary-400: #6699cc;
   --secondary-700: #05445e;
   --secondary-900: #222e50;
+ 
 }
 
 body {
@@ -27,9 +30,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 h2 {
-  color:rgb(252, 0, 0);
+  color: var(--secondary-700);
+  text-align: center;
 }
+
 h5 {
   color: var(--secondary-700);
 }

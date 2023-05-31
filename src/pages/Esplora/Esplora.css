@@ -17,7 +17,11 @@
     padding: 3rem;
     text-align: center;
 }
-
+.esplora>div{
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
 
 .esplora h1 {
     font-size: 5rem;
@@ -78,26 +82,24 @@
     border-bottom:1px solid rgba(255,255,255,.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
-  .lineUp {
-    animation: 4s anim-lineUp ease-out infinite;
+  .waviy {
+    position: relative;
+    display: flex;
   }
-  @keyframes anim-lineUp {
-    0% {
-      opacity: 0;
-      transform: translateY(80%);
-    }
-    20% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
+  .waviy h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 5rem;
+    color: var(--primary);
+    animation: flip 3s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
     }
   }
+
 
 
 
