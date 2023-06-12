@@ -7,7 +7,7 @@ import Hero from "../Component/Homepage/Hero/index";
 
 const Homepage = () => {
   return (
-    <Box>
+    <Box minHeight="100vh">
       <Hero />
       <ChiSiamo />
       <ComeFunziona />
