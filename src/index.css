@@ -1,11 +1,14 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body,
+#root,
+.app {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
 }
 
 :root {
@@ -41,6 +44,10 @@ h5 {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 /* Handle */
