@@ -1,6 +1,7 @@
 import Button from '../../Component/Button/Button'
 import DropDownMenu from '../../Component/DropDownMenu'
 import './Esplora.css'
+import Search from '../../Component/Search'
 function Esplora() {
     const style = { "--i": 1, }
     const style2 = { "--i": 2, }
@@ -34,12 +35,9 @@ function Esplora() {
                     Inserisci il nome della città per
                     scoprire le bellezze architettoniche, la natura e gli animali che la popolano.</h4>
 
-                <div className="search-box">
-                    <button className="btn-search"><i className="fa fa-search"></i></button>
-                    <input type="text" className="input-search" placeholder="Inserisci Città..." />
-                </div>
+              <Search></Search>
             </div>
-            <h2 className='p'>"Insieme, possiamo preservare la bellezza della natura e proteggere la preziosa fauna che la abita, garantendo così un futuro sostenibile per tutte le creature che condividono il nostro pianeta."</h2>
+            <h3 className='p'>"Insieme, possiamo preservare la bellezza della natura e proteggere la preziosa fauna che la abita, garantendo così un futuro sostenibile per tutte le creature che condividono il nostro pianeta."</h3>
             <div className="sectionCartina flx">
                 <div className="cartina">
                 </div>
