@@ -101,9 +101,7 @@ function Esplora() {
       </div>
       <div>
         <label htmlFor="label">Label</label>
-        {/* {cities.map((city, index) => (
-          <p>{city.name}</p>
-        ))} */}
+
         {/* {animals.map((category, index) => (
           <p>{category.name}</p>
         ))} */}

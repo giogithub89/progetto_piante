@@ -24,7 +24,11 @@ export default function DropDownMenu({ cities }) {
               value={city}
               label="Age"
               onChange={handleChange}>
-              <MenuItem value={10}>TORINO</MenuItem>
+              {cities.map((city, index) => (
+                <MenuItem key={index} value={city.name}>
+                  {city.name}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Box>
