@@ -38,6 +38,7 @@ function Navbar() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     window.pageYOffset = 0;
   }
+  //serve quando clicchiamo su chi siamo
   function downFunction() {
     document.body.scrollTop = 550; // For Safari
     document.documentElement.scrollTop = 550; // For Chrome, Firefox, IE and Opera

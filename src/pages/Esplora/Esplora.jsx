@@ -1,4 +1,5 @@
-import SectionCategory from '../../Component/SectionCategory';
+import Button from '../../Component/Button/Button'
+import DropDownMenu from '../../Component/DropDownMenu'
 import './Esplora.css'
 function Esplora() {
     const style = { "--i": 1, }
@@ -14,7 +15,7 @@ function Esplora() {
 
     return (
         <>
-            <div className="esplora">
+            <div className="esplora flx">
                 <div>
                     <h1>Welcome to </h1>
                     <div className='waviy'>
@@ -33,14 +34,31 @@ function Esplora() {
                     Inserisci il nome della città per
                     scoprire le bellezze architettoniche, la natura e gli animali che la popolano.</h4>
 
-                <div class="search-box">
-                    <button class="btn-search"><i class="fa fa-search"></i></button>
-                    <input type="text" class="input-search" placeholder="Inserisci Città..." />
+                <div className="search-box">
+                    <button className="btn-search"><i className="fa fa-search"></i></button>
+                    <input type="text" className="input-search" placeholder="Inserisci Città..." />
                 </div>
             </div>
+            <h2 className='p'>"Insieme, possiamo preservare la bellezza della natura e proteggere la preziosa fauna che la abita, garantendo così un futuro sostenibile per tutte le creature che condividono il nostro pianeta."</h2>
+            <div className="sectionCartina flx">
+                <div className="cartina">
+                </div>
 
-            <h2>Scegli la categoria :</h2>
-            <SectionCategory />
+                <div className="formCitta flx">
+                    <div className="step">
+                        <h3> Step 1 : Seleziona una città </h3>
+                        <h3> Step 2 : Seleziona una categoria</h3>
+                        <h3>Step 3 : Seleziona la card e visualizza le sue informazioni</h3>
+                    </div>
+                    <div className='divSelect'>
+                        <DropDownMenu />
+                        <Button type="submit" value='CERCA'></Button>
+
+                    </div>
+                </div>
+            </div >
+
+
         </>)
 }
 export default Esplora;

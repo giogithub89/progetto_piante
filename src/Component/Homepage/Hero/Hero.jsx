@@ -12,7 +12,7 @@ const Hero = () => {
           <h1 >Biosfere</h1>
           <h2 className='animate-charcter' >TENIAMO A CUORE LA NATURA</h2>
         </div>
-        <Button value='Esplora'></Button>
+        <Button type="button" value='Esplora'></Button>
       </div>
 
     </>
