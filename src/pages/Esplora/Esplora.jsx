@@ -6,6 +6,7 @@ import Search from "../../Component/Search";
 import { db } from "../../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import { Avatar, Box } from "@mui/material";
 
 function Esplora() {
   const style = { "--i": 1 };
@@ -32,29 +33,40 @@ function Esplora() {
     "Qsxn8HKOl9BFxJfICl6x",
     "cities"
   );
+  const [selectedCity, setSelectedCity] = useState();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const getCat = async () => {
+    const getCities = async () => {
       try {
         const results = await getDocs(citiesCollection);
         const data = results.docs.map((doc) => ({ ...doc.data(), id: doc.name }));
         //console.log(data);
         setCities(data);
-        data.forEach((city, index) => {
-          if (index === 2) {
-            console.log(city.animals.mammiferi);
-            setAnimals(city.animals.mammiferi);
-            setPlaces(city.places);
-            setPlaces(city.plants);
-            //const mammiferiImages = city.animals.mammiferi.map((animal) => animal.image);
-          }
-        });
+        //data.map((city, index) => city.name === "Torino" && setAnimals(city.animals));
       } catch (err) {
         console.log(err);
       }
     };
-    getCat();
+    getCities();
   }, []);
+
+  useEffect(() => {
+    cities.map((city, index) => {
+      if (city.name === selectedCity) {
+        setAnimals(city.animals);
+        setPlaces(city.places);
+        setPlants(city.plants);
+        //mostra le 3 card delle categorie
+        setVisible(true);
+      }
+      return null;
+    });
+  }, [selectedCity]);
+
+  const handleSelectedCity = (value) => {
+    setSelectedCity(value);
+  };
 
   return (
     <>
@@ -94,17 +106,25 @@ function Esplora() {
             <h3>Step 3 : Seleziona la card e visualizza le sue informazioni</h3>
           </div>
           <div className="divSelect">
-            <DropDownMenu cities={cities} />
+            <DropDownMenu cities={cities} selectedCity={handleSelectedCity} />
             <Button type="submit" value="CERCA"></Button>
           </div>
         </div>
       </div>
+
+      {/* {visible === true && <Cards/>} */}
+
       <div>
         <label htmlFor="label">Label</label>
 
-        {/* {animals.map((category, index) => (
-          <p>{category.name}</p>
-        ))} */}
+        {animals.map((item, index) => (
+          <>
+            <p>{item.name}</p>
+            <Box width="70px" height="70px" s>
+              <Avatar key={index} src={item.image} alt="eee" sx={{ width: "70px", height: "70px" }} />
+            </Box>
+          </>
+        ))}
       </div>
     </>
   );

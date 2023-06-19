@@ -5,11 +5,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function DropDownMenu({ cities }) {
+export default function DropDownMenu({ cities, selectedCity }) {
   const [city, setCity] = React.useState("");
 
   const handleChange = (event) => {
     setCity(event.target.value);
+    selectedCity(event.target.value);
   };
 
   return (
