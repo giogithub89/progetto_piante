@@ -4,10 +4,10 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import abstract from "../../resources/abstract_bbg.jpeg";
 
-const ListItemCustom = ({ href, text, onClick }) => {
+const ListItemCustom = ({ href, text, onClick, target }) => {
   return (
     <ListItemText>
-      <Link href={href} underline="none" color="inherit" onClick={onClick}>
+      <Link href={href} underline="hover" color="inherit" onClick={onClick} target={target} rel="noopener">
         {text}
       </Link>
     </ListItemText>
@@ -31,8 +31,8 @@ const Footer = () => {
           <List sx={{ flex: 1, color: "white" }}>
             <Typography variant="h4">Mappa del sito</Typography>
             <ListItem sx={{ flexDirection: "column", alignItems: "start", pl: "0px" }}>
-              <ListItemCustom text="Homepage" href={"#"} />
-              <ListItemCustom text="Esplora" href={"#"} />
+              <ListItemCustom text="Homepage" href={"/"} />
+              <ListItemCustom text="Esplora" href={"esplora"} />
               <ListItemCustom text="Termini e Condizioni" href={"#"} />
               <ListItemCustom text="Privacy" href={"#"} />
             </ListItem>
@@ -41,7 +41,10 @@ const Footer = () => {
           <List sx={{ flex: 1, color: "white" }}>
             <Typography variant="h4">Social</Typography>
             <ListItem sx={{ flexDirection: "column", alignItems: "start", pl: "0px" }}>
-              <ListItemText>Instagram</ListItemText>
+              <ListItemCustom
+                href={"https://instagram.com/biosphere_italia?igshid=MzRlODBiNWFlZA=="}
+                text={"Instagram"}
+                target={"_blank"}></ListItemCustom>
               <ListItemText>Facebook</ListItemText>
               <ListItemText>Bigbag</ListItemText>
             </ListItem>
