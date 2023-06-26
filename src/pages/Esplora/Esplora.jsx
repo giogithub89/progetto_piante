@@ -1,12 +1,8 @@
-import Button from "../../Component/Button/Button";
-import DropDownMenu from "../../Component/DropDownMenu";
 import "./Esplora.css";
 import Search from "../../Component/Search";
 
-import { db } from "../../config/firebase";
-import { collection, getDocs } from "firebase/firestore";
-import { useState, useEffect } from "react";
-import { Avatar, Box } from "@mui/material";
+// import { Avatar, Box, Card } from "@mui/material";
+import SectionCategory from "../../Component/SectionCategory/SectionCategory";
 
 function Esplora() {
   const style = { "--i": 1 };
@@ -18,55 +14,6 @@ function Esplora() {
   const style7 = { "--i": 7 };
   const style8 = { "--i": 8 };
 
-  const [regions, setRegions] = useState([]);
-  const [cities, setCities] = useState([]);
-  const [animals, setAnimals] = useState([]);
-  const [places, setPlaces] = useState([]);
-  const [plants, setPlants] = useState([]);
-  const regionsCollection = collection(db, "regions");
-  const provincesCollection = collection(db, "provinces");
-  const citiesCollection = collection(
-    db,
-    "regions",
-    "HxI7dbXbKmCgdYeKy8TG",
-    "provinces",
-    "Qsxn8HKOl9BFxJfICl6x",
-    "cities"
-  );
-  const [selectedCity, setSelectedCity] = useState();
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const getCities = async () => {
-      try {
-        const results = await getDocs(citiesCollection);
-        const data = results.docs.map((doc) => ({ ...doc.data(), id: doc.name }));
-        //console.log(data);
-        setCities(data);
-        //data.map((city, index) => city.name === "Torino" && setAnimals(city.animals));
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getCities();
-  }, []);
-
-  useEffect(() => {
-    cities.map((city, index) => {
-      if (city.name === selectedCity) {
-        setAnimals(city.animals);
-        setPlaces(city.places);
-        setPlants(city.plants);
-        //mostra le 3 card delle categorie
-        setVisible(true);
-      }
-      return null;
-    });
-  }, [selectedCity]);
-
-  const handleSelectedCity = (value) => {
-    setSelectedCity(value);
-  };
 
   return (
     <>
@@ -96,25 +43,38 @@ function Esplora() {
         "Insieme, possiamo preservare la bellezza della natura e proteggere la preziosa fauna che la abita, garantendo
         così un futuro sostenibile per tutte le creature che condividono il nostro pianeta."
       </h3>
+    
+
       <div className="sectionCartina flx">
         <div className="cartina"></div>
-
-        <div className="formCitta flx">
-          <div className="step">
-            <h3> Step 1 : Seleziona una città </h3>
-            <h3> Step 2 : Seleziona una categoria</h3>
-            <h3>Step 3 : Seleziona la card e visualizza le sue informazioni</h3>
-          </div>
-          <div className="divSelect">
-            <DropDownMenu cities={cities} selectedCity={handleSelectedCity} />
-            <Button type="submit" value="CERCA"></Button>
-          </div>
+        <div>
+          <p>Benvenuti nella splendida regione del Piemonte! Situata nel nord-ovest dell'Italia, il Piemonte è un luogo ricco di storia, cultura,
+            paesaggi mozzafiato e prelibatezze culinarie. Siamo lieti di invitarvi a scoprire le meraviglie di questa regione unica.
+            Il Piemonte è noto per la sua capitale, Torino, una città che unisce tradizione e innovazione. Torino è famosa per essere stata la sede della casa automobilistica Fiat e per il suo legame con l'industria automobilistica italiana. Qui potrete visitare il Museo dell'Automobile, un vero paradiso per gli appassionati di motori. Inoltre, Torino è anche una
+            città ricca di storia e cultura, con maestosi palazzi, musei e una vibrante scena artistica.
+            Ma il Piemonte offre molto di più! La regione è circondata da imponenti catene montuose, tra cui le maestose Alpi. Queste montagne
+            offrono scenari spettacolari e numerose opportunità per gli amanti degli sport all'aria aperta. Potrete praticare escursioni, sciare
+            sulle piste perfettamente innevate o semplicemente godervi la bellezza della natura intorno a voi.
+            Infine, il Piemonte è anche ricco di storia e cultura. Numerosi castelli, palazzi e siti archeologici testimoniano il passato
+            glorioso della regione. Potrete visitare luoghi affascinanti come la Reggia di Venaria, un'imponente residenza reale,
+            o il Sacro Monte di Varallo, un complesso di cappelle che rappresentano la Via Crucis.
+            Siamo certi che il Piemonte saprà conquistarvi con la sua bellezza, la sua ospitalità e la sua
+            autenticità. Che siate interessati a storia, cultura, enogastronomia o avventure all'aria aperta, questa regione avrà qualcosa di speciale da offrirvi. Venite a scoprire il Piemonte e lasciatevi incantare da tutto ciò che ha da offrire. Vi aspettiamo a braccia aperte!</p>
         </div>
       </div>
+      <div className="istruzioni">
+        <h3>Step 1 : Seleziona una città</h3><span>*</span>
+        <h3>Step 2 : Seleziona una categoria</h3><span>*</span>
+        <h3>Step 3 : Seleziona la card e visualizza le sue informazioni</h3>
+      </div>
+      <SectionCategory></SectionCategory>
+
+
+
 
       {/* {visible === true && <Cards/>} */}
 
-      <div>
+      {/* <div>
         <label htmlFor="label">Label</label>
 
         {animals.map((item, index) => (
@@ -125,7 +85,7 @@ function Esplora() {
             </Box>
           </>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }

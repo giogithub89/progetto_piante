@@ -9,6 +9,7 @@
     box-shadow: 2px 4px 13px 7px rgba(0, 0, 0, 0.062);
     border-radius: 1rem;
     padding: 5px;
+    cursor: pointer;
 }
 
 .card img {
@@ -19,6 +20,7 @@
 
 .card:hover {
     box-shadow: 2px 4px 13px 7px rgba(0, 0, 0, 0.329);
+ 
 
 
 }

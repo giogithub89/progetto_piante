@@ -14,7 +14,7 @@ export default function DropDownMenu({ cities, selectedCity }) {
   };
 
   return (
-    <div className="dropdownMenu">
+    <div className="dropdownMenu" > 
       <div>
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>

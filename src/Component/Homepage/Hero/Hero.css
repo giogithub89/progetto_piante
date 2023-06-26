@@ -17,6 +17,7 @@
 .hero h1 {
   font-size: 8rem;
   color: white;
+  margin: 0px;
 }
 
 .hero>div {

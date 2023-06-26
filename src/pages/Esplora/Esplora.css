@@ -56,11 +56,24 @@
 
 /*-------------------------------------------------------cartina-------------------- */
 .sectionCartina {
+  display: flex;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
+  padding-bottom: 2rem;
 }
+
+.sectionCartina p {
+  width: 38rem;
+  padding: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
+  /* color: white; */
+  font-weight: 500;
+}
+
 
 .cartina {
   background-image: url(./piemonte\ cartina.jpg);
@@ -70,37 +83,42 @@
   background-position-y: center;
   width: 28rem;
   height: 33rem;
+
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.step h3 {
-  background-color: var(--primary);
-  color: white;
-  padding: 1rem;
+
+.istruzioni h3 {
+  text-align: center;
   margin: 0px;
 }
 
-.formCitta {
+.istruzioni {
+  color: var(--primary);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 5rem;
+  flex-direction: row;
+  gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
-.divSelect {
-  display: flex;
-}
+
 
 .p {
   text-align: center;
   color: var(--primary);
 }
+
+.SectionCard {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
 
 
 
@@ -109,7 +127,23 @@
   .esplora h1 {
     font-size: 4rem;
   }
-  .esplora{
+
+  .esplora {
     padding-top: 5rem;
   }
+
+  .SectionCard {
+    gap: 2rem;
+  }
+
+
+
+}
+
+@media screen and (max-width: 604px) {
+  .sectionCartina p {
+    width: 100%;
+    padding: 2rem;
+  }
+
 }

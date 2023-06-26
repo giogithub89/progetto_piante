@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 const Layout = () => {
   return (
     <div>
-      {" "}
+  
       <Navbar />
       <Box marginTop="51px">
         <Outlet />

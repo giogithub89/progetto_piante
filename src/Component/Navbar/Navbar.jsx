@@ -1,7 +1,6 @@
 import "./Navbar.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useRef } from "react";
-import logo from './logo.png'
 
 
 function Navbar() {
@@ -63,10 +62,10 @@ function Navbar() {
             <ul className="nascosto" id="ulHamburger">
               <li onClick={() => { topFunction(); handleClick() }}><Link to="/"> Home</Link></li>
               <li onClick={() => { topFunction(); handleClick() }}>
-                <a> <Link to={'esplora'} >Esplora</Link> </a>
+              <Link to={'esplora'} >Esplora </Link>
               </li>
               <li onClick={() => { downFunction(); handleClick() }}>
-                <a><Link to="/">Chi siamo</Link></a>
+                <Link to="/">Chi siamo</Link>
               </li>
               <li>
                 <a href="#social">Contatti</a>
