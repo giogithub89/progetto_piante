@@ -63,11 +63,12 @@
     background-color: rgb(233, 233, 233);
     margin-top: 2rem;
     position:sticky;
-    top: 25px;
+    top: 35px;
 }
 .SectionCategory li{
     list-style: none;
     cursor: pointer;
+    font-weight: 700;
 }
 .SectionCategory li:hover{
  color: var(--primary);

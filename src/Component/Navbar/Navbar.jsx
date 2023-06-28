@@ -70,6 +70,9 @@ function Navbar() {
               <li>
                 <a href="#social">Contatti</a>
               </li>
+              <li>
+              <Link to="InsertNewCards">NEWCARD</Link>
+              </li>
             </ul>
           </div>
         </div>

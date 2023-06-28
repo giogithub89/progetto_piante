@@ -1,0 +1,18 @@
+.InsertNewCard{
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+  
+}
+.InsertNewCard form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border: 2px solid var(--primary);
+}

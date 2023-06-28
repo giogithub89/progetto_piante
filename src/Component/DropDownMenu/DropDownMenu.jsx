@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function DropDownMenu({ cities, selectedCity }) {
+export default function DropDownMenu({ cities, selectedCity, nome }) {
   const [city, setCity] = React.useState("");
 
   const handleChange = (event) => {
@@ -18,7 +18,7 @@ export default function DropDownMenu({ cities, selectedCity }) {
       <div>
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Città</InputLabel>
+            <InputLabel id="demo-simple-select-label">{nome}</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -26,8 +26,8 @@ export default function DropDownMenu({ cities, selectedCity }) {
               label="Age"
               onChange={handleChange}>
               {cities.map((city, index) => (
-                <MenuItem key={index} value={city.name}>
-                  {city.name}
+                <MenuItem key={index} value={city.name?city.name:city}>
+                  {city.name?city.name:city}
                 </MenuItem>
               ))}
             </Select>

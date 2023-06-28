@@ -74,27 +74,22 @@ function SectionCategory({flora, fauna, luoghi }) {
   const handleSelectedCity = (value) => {
     setSelectedCity(value);
   };
-  // function downFunction() {
-  //   document.body.scrollTop = 1250; // For Safari
-  //   document.documentElement.scrollTop = 950; // For Chrome, Firefox, IE and Opera
-  //   window.pageYOffset = 1950;
 
-  // }
+
+
+  function downFunction() {
+    document.body.scrollTop = 1250; // For Safari
+    document.documentElement.scrollTop = 950; // For Chrome, Firefox, IE and Opera
+    window.pageYOffset = 1950;
+
+  }
   return (
     <>
       <div className="SectionCategory">
-        {/* <div className="flora">
-        <h1>Flora</h1>
-      </div>
-      <div className="fauna">
-        <h1>Fauna</h1>
-      </div>
-      <div className="monumenti">
-        <h1>Luoghi</h1>
-      </div> */}
+      
         <div className="divSelect">
-          <DropDownMenu cities={cities} selectedCity={handleSelectedCity} />
-          <a href="#001">  <Button type="submit" value="CERCA"></Button></a>
+          <DropDownMenu cities={cities} selectedCity={handleSelectedCity} nome={'Città'}  />
+          <a href="#001">  <Button type="submit" value="CERCA" miafunzione={downFunction}></Button></a>
         </div>
         <span>Categoria:</span>
         <li onClick={ShowCard1}>FLORA</li>
