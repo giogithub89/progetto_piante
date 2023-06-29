@@ -41,7 +41,7 @@ function Navbar() {
   function downFunction() {
     document.body.scrollTop = 550; // For Safari
     document.documentElement.scrollTop = 550; // For Chrome, Firefox, IE and Opera
-    window.pageYOffset = 550;
+    // window.scrollY=900
   }
 
   return (
@@ -71,7 +71,7 @@ function Navbar() {
                 <a href="#social">Contatti</a>
               </li>
               <li>
-              <Link to="InsertNewCards">NEWCARD</Link>
+              {/* <Link to="InsertNewCards">NEWCARD</Link> */}
               </li>
             </ul>
           </div>
