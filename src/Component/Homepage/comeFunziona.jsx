@@ -33,7 +33,7 @@ const ComeFunziona = () => {
     },
     {
       title: "Community",
-      text: "Unisciti alla community di Biospere, per conoscere altri appassionati come te",
+      text: "Unisciti alla community di Biosphere, per conoscere altri appassionati come te",
       src: community,
     },
   ];

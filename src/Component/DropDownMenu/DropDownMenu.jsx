@@ -5,16 +5,20 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function DropDownMenu({ cities, selectedCity, nome }) {
+export default function DropDownMenu({ cities, selectedCity, cityId, nome }) {
   const [city, setCity] = React.useState("");
 
-  const handleChange = (event) => {
+  const handleChange = (event, inputValue) => {
     setCity(event.target.value);
     selectedCity(event.target.value);
+
+    const c = inputValue.key.replace(".$", "");
+    //console.log(c);
+    cityId(c);
   };
 
   return (
-    <div className="dropdownMenu" > 
+    <div className="dropdownMenu">
       <div>
         <Box sx={{ minWidth: 120 }}>
           <FormControl fullWidth>
@@ -26,8 +30,8 @@ export default function DropDownMenu({ cities, selectedCity, nome }) {
               label="Age"
               onChange={handleChange}>
               {cities.map((city, index) => (
-                <MenuItem key={index} value={city.name?city.name:city}>
-                  {city.name?city.name:city}
+                <MenuItem key={index} value={city.name ? city.name : city}>
+                  {city.name ? city.name : city}
                 </MenuItem>
               ))}
             </Select>

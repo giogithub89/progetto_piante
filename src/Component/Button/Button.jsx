@@ -1,10 +1,10 @@
-import './Button.css'
-function Button({ type, value = "", miafunzione }) {
+import "./Button.css";
 
-
-    return (<>
-        <input className="btn" type={type} value={value} onClick={miafunzione} />
-
-    </>)
+function Button({ type, value = "", onClick }) {
+  return (
+    <>
+      <input className="btn" type={type} value={value} onClick={onClick} />
+    </>
+  );
 }
 export default Button;
