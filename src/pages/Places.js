@@ -1,11 +1,11 @@
 import { Box, Divider, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import BoxGrid from "../Component/BoxGrid";
 import CellGridCustom from "../Component/CellGridCustom";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CustomCard from "../Component/CustomCard";
 import { Info } from "@mui/icons-material";
 import SourceIcon from "@mui/icons-material/Source";
-import BoxGrid from "../Component/BoxGrid";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useLocation } from "react-router-dom";
 
 const TextItem = ({ text }) => {
@@ -16,87 +16,75 @@ const TextItem = ({ text }) => {
   );
 };
 
-const Product = () => {
+const Places = () => {
   const { state } = useLocation();
-  const { data } = state || {};
-  const [alimentazione, setAlimentazione] = useState();
-  const [description, setDesc] = useState();
-  const [cattività, setCattività] = useState();
-  const [ordine, setOrdine] = useState();
-  const [dimensioni, setDimensioni] = useState();
-  const [durataVita, setDurataVita] = useState();
-  const [famiglia, setFamiglia] = useState();
-  const [genere, setGenere] = useState();
-  const [habitat, setHabitat] = useState();
+  const { data, location } = state || {};
   const [image, setImage] = useState();
   const [name, setName] = useState();
-  const [riproduzione, setRiproduzione] = useState();
-  const [sottospecie, setSottoSpecie] = useState();
-  const [specie, setSpecie] = useState();
+  const [description, setDesc] = useState();
+  const [popolazione, setPopolazione] = useState();
+  const [estensione, setEstensione] = useState();
+  const [densità, setDensità] = useState();
+  const [per_boschiva, setPerBoschiva] = useState();
+  const [luoghi_storici, setLuoghi_storici] = useState();
+  const [recensioni, setRecensioni] = useState();
+  const [luoghi_naturali, setLuoghi_naturali] = useState();
+  const [fiere, setFiere] = useState();
+  const [animali, setAnimali] = useState();
+  const [vegetali, setVegetali] = useState();
 
   useEffect(() => {
     const fetchData = () => {
       const {
-        alimentazione,
-        description,
-        dimensioni,
-        durata_vita,
-        famiglia,
-        genere,
-        cattività,
-        habitat,
-        image,
         name,
-        ordine,
-        riproduzione,
-        sottospecie,
-        specie,
+        image,
+        description,
+        popolazione,
+        densità,
+        estensione,
+        per_boschiva,
+        luoghi_naturali,
+        luoghi_storici,
+        recensioni,
+        fiere,
+        animali,
+        vegetali,
       } = data || {};
-      setAlimentazione(alimentazione);
-      setDesc(description);
-      setCattività(cattività);
-      setOrdine(ordine);
-      setDimensioni(dimensioni);
-      setDurataVita(durata_vita);
-      setFamiglia(famiglia);
-      setGenere(genere);
-      setHabitat(habitat);
-      setImage(image);
       setName(name);
-      setRiproduzione(riproduzione);
-      setSottoSpecie(sottospecie);
-      setSpecie(specie);
+      setImage(image);
+      setDesc(description);
+      setDensità(densità);
+      setPopolazione(popolazione);
+      setEstensione(estensione);
+      setPerBoschiva(per_boschiva);
+      setLuoghi_naturali(luoghi_naturali);
+      setLuoghi_storici(luoghi_storici);
+      setRecensioni(recensioni);
+      setFiere(fiere);
+      setAnimali(animali);
+      setVegetali(vegetali);
     };
     fetchData();
-  }, []);
+  });
 
   const infoCard = [
     { text: "Nome comune:", desc: name },
-    { text: "Classe:", desc: "" },
-    { text: "Ordine:", desc: ordine },
-    { text: "Famiglia:", desc: famiglia },
-    { text: "Genere:", desc: genere },
-    { text: "Specie:", desc: specie },
-    { text: "Sottospecie:", desc: sottospecie },
-    { text: "Duarata media vita:", desc: durataVita },
-    { text: "Dimensioni - Peso: ", desc: dimensioni },
-    { text: "Alimentazione: ", desc: alimentazione },
-    { text: "Periodo riproduzione:", desc: riproduzione },
-    { text: "Habitat:", desc: habitat },
-    { text: "Può vivere in cattività:", desc: cattività === true ? "Si" : "No" },
+    { text: "Popolazione:", desc: popolazione },
+    { text: "Densità:", desc: densità },
+    { text: "Estensione:", desc: estensione },
+    { text: "Percentuale boschiva:", desc: per_boschiva },
+    { text: "Luoghi storici:", desc: luoghi_storici },
+
+    { text: "Luoghi naturali: ", desc: luoghi_naturali },
+    // { text: "Recensioni su luoghi naturali: ", desc: alimentazione },
+    { text: "Fiere/sagre/feste:", desc: fiere },
+    { text: "Specie animali che puoi trovare:", desc: animali },
+    { text: "Specie vegetali che puoi trovare::", desc: vegetali },
+    // { text: "Recensioni delle persone residenti", desc: habitat },
+    // { text: "Recensioni dei visitatori:", desc: habitat },
   ];
 
-  const info2Card = [
-    { text: "Stima esemplari:", desc: "200" },
-    { text: "Vita solitria:", desc: "no" },
-    { text: "Stato di conservazione:", desc: "" },
-    { text: "Enti - Associazioni:", desc: "0" },
-    { text: "Esperti:", desc: "" },
-    { text: "Pagine social:", desc: "" },
-    { text: "Comuni in cui si trova:", desc: "" },
-    { text: "Come comportarsi in caso di incontro: ", desc: "" },
-    { text: "Come posso aiutare questa specie?:", desc: "" },
-  ];
+  const info2Card = [{ text: "Recensioni:", desc: recensioni }];
 
   return (
     <Box paddingX={18} paddingY={10}>
@@ -120,7 +108,7 @@ const Product = () => {
               </Typography>
             </Box>
             <Box display="flex" p="5px 0" alignItems={"center"}>
-              <Typography>{""}</Typography>
+              <Typography>{location}</Typography>
             </Box>
           </CustomCard>
         </CellGridCustom>
@@ -192,4 +180,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Places;

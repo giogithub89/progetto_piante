@@ -60,11 +60,11 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-.flx{
+.flx {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.none{
+.none {
   display: none;
 }

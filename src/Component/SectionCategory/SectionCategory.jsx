@@ -6,7 +6,19 @@ import { collection, getDoc, getDocs, doc, documentId } from "firebase/firestore
 import { useState, useEffect } from "react";
 import Card from "../../Component/Card/Card";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import CellGridCustom from "../CellGridCustom";
+import CustomCard from "../CustomCard";
+import { Info } from "@mui/icons-material";
+import BoxGrid from "../BoxGrid";
+
+const TextItem = ({ text }) => {
+  return (
+    <Typography variant="h6" marginRight="10px" sx={{ color: "#ababab" }}>
+      {text}
+    </Typography>
+  );
+};
 
 function SectionCategory() {
   const [collections, setCollection] = useState("animals");
@@ -30,23 +42,32 @@ function SectionCategory() {
   const [selectedCity, setSelectedCity] = useState();
   const [visible, setVisible] = useState();
   const [message, setMessage] = useState();
+  const [popolazione, setPopolazione] = useState();
+  const [estensione, setEstensione] = useState();
+  const [densità, setDensità] = useState();
+  const [per_boschiva, setPerBoschiva] = useState();
+  const [luoghi_storici, setLuoghi_storici] = useState([]);
+  const [recensioni, setRecensioni] = useState();
+  const [luoghi_naturali, setLuoghi_naturali] = useState([]);
+  const [fiere, setFiere] = useState([]);
+  const [animali, setAnimali] = useState();
+  const [vegetali, setVegetali] = useState();
 
   const navigate = useNavigate();
 
-  const ShowCard1 = () => {
-    setVisible(plants);
-    setCollection("plants");
-    console.log(collections);
-  };
-  const ShowCard2 = () => {
-    setVisible(animals);
-    setCollection("animals");
-    console.log(collections);
-  };
-  const ShowCard3 = () => {
-    setVisible(places);
-    setCollection("place");
-    console.log(collections);
+  const ShowCard = (value) => {
+    if (value === "animals") {
+      setVisible(animals);
+      setCollection("animals");
+    } else if (value === "plants") {
+      setVisible(plants);
+      setCollection("plants");
+    } else if (value === "places") {
+      setVisible(places);
+      setCollection("place");
+    } else {
+      setVisible("info");
+    }
   };
 
   useEffect(() => {
@@ -70,6 +91,16 @@ function SectionCategory() {
         setAnimals(city.animals);
         setPlaces(city.places);
         setPlants(city.plants);
+        setPopolazione(city.popolazione);
+        setDensità(city.densità);
+        setEstensione(city.estensione);
+        setPerBoschiva(city.perc_boschiva);
+        setLuoghi_naturali(city.luoghi_naturali);
+        setLuoghi_storici(city.luoghi_storici);
+        setRecensioni(city.recensioni);
+        setFiere(city.fiere);
+        setAnimali(city.animali);
+        setVegetali(city.vegetali);
 
         // funzione che mi permette di creare la const tutto
       }
@@ -86,27 +117,18 @@ function SectionCategory() {
     getDocId(inputValue);
   };
 
-  function downFunction() {
-    if (window.innerWidth < 600) {
-      window.scroll(0, 2000);
-    } else {
-      document.body.scrollTop = 1250; // For Safari
-      document.documentElement.scrollTop = 1050; // For Chrome, Firefox, IE and Opera
-    }
-  }
-
   const setIndex = (index) => {
     if (collections === "animals") {
       const itemData = animals[index];
-      navigate(`/product/${index}`, { state: { data: itemData } });
+      navigate(`/animals/${index}`, { state: { data: itemData, location: selectedCity } });
     }
     if (collections === "place") {
       const itemData = places[index];
-      navigate(`/places/${index}`, { state: { data: itemData } });
+      navigate(`/places/${index}`, { state: { data: itemData, location: selectedCity } });
     }
     if (collections === "plants") {
       const itemData = plants[index];
-      navigate(`/plants/${index}`, { state: { data: itemData } });
+      navigate(`/plants/${index}`, { state: { data: itemData, location: selectedCity } });
     }
   };
 
@@ -121,36 +143,91 @@ function SectionCategory() {
     }
   };
 
+  const infoCard = [
+    { text: "Popolazione:", desc: popolazione },
+    { text: "Densità:", desc: densità },
+    { text: "Estensione:", desc: estensione },
+    { text: "Percentuale boschiva:", desc: per_boschiva },
+    { text: "Luoghi storici:", desc: luoghi_storici },
+
+    { text: "Luoghi naturali: ", desc: luoghi_naturali },
+
+    { text: "Fiere/sagre/feste:", desc: fiere },
+    { text: "Specie animali che puoi trovare:", desc: animali },
+    { text: "Specie vegetali che puoi trovare:", desc: vegetali },
+    // { text: "Recensioni delle persone residenti", desc: habitat },
+    // { text: "Recensioni dei visitatori:", desc: habitat },
+  ];
+
   return (
     <>
       <div className="SectionCategory">
         <div className="divSelect">
           <DropDownMenu cities={cities} selectedCity={handleSelectedCity} cityId={handleInputValue} nome={"Città"} />
-          <a href="#001">
-            {" "}
-            <Button
-              type="submit"
-              value="CERCA"
-              onClick={() => {
-                downFunction();
-                setVisible(animals);
-              }}></Button>
-          </a>
+
+          <Button
+            sx={{ height: "40px" }}
+            variant="contained"
+            color="success"
+            size="medium"
+            onClick={() => {
+              ShowCard("animals");
+            }}>
+            CERCA
+          </Button>
         </div>
         <span>Categoria:</span>
 
-        <Button variant="text" onClick={ShowCard1}>
+        <Button variant="text" onClick={() => ShowCard("plants")}>
           FLORA
         </Button>
-        <li onClick={ShowCard2}>FAUNA</li>
-        <li onClick={ShowCard3}>LUOGHI</li>
+        <Button variant="text" onClick={() => ShowCard("animals")}>
+          FAUNA
+        </Button>
+        <Button variant="text" onClick={() => ShowCard("places")}>
+          LUOGHI
+        </Button>
+        <Button variant="text" onClick={() => ShowCard("info")}>
+          INFO
+        </Button>
       </div>
       <div className="SectionCard">
         {/* {message === true ? (
           <Typography>Nessun dato da visualizzare</Typography>
         ) : (
           )} */}
-        <Card lista={visible} clicca={setIndex}></Card>
+        {visible === "info" ? (
+          <BoxGrid rowGap="20px">
+            <CellGridCustom gridColumn="span 6">
+              <CustomCard flexDirection="column" p="20px" marginX="20px">
+                <Box display="flex" alignItems={"center"}>
+                  <Info sx={{ marginRight: "10px" }}></Info>
+                  <Typography variant="h6" fontWeight="bold">
+                    Info
+                  </Typography>
+                </Box>
+                {infoCard.map((item) => (
+                  <Box display="flex" p="5px 0" alignItems={"center"}>
+                    <TextItem text={item.text} />
+                    <Typography>{item.desc}</Typography>
+                  </Box>
+                ))}
+              </CustomCard>
+            </CellGridCustom>
+            <CellGridCustom gridColumn="span 6">
+              <CustomCard flexDirection="column" p="20px" marginX="20px">
+                <Box display="flex" alignItems={"center"}>
+                  <Info sx={{ marginRight: "10px" }}></Info>
+                  <Typography variant="h6" fontWeight="bold">
+                    Recensioni
+                  </Typography>
+                </Box>
+              </CustomCard>
+            </CellGridCustom>
+          </BoxGrid>
+        ) : (
+          <Card lista={visible} clicca={setIndex}></Card>
+        )}
       </div>
     </>
   );

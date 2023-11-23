@@ -34,7 +34,7 @@ const Footer = () => {
               <ListItemCustom text="Homepage" href={"/"} />
               <ListItemCustom text="Esplora" href={"esplora"} />
               <ListItemCustom text="Termini e Condizioni" href={"#"} />
-              <ListItemCustom text="Privacy" href={"privacy"} />
+              <ListItemCustom text="Privacy" href="/privacy" />
             </ListItem>
           </List>
 

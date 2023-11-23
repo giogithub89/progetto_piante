@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.esplora>div {
+.esplora > div {
   display: flex;
   gap: 0.8rem;
   flex-wrap: wrap;
@@ -30,7 +30,6 @@
   margin: 0px;
 }
 
-
 .waviy {
   position: relative;
   display: flex;
@@ -42,15 +41,14 @@
   font-size: 5rem;
   color: var(--primary);
   animation: flip 3s infinite;
-  animation-delay: calc(.2s * var(--i));
+  animation-delay: calc(0.2s * var(--i));
   margin: 0px;
 }
 
 @keyframes flip {
-
   0%,
   80% {
-    transform: rotateY(360deg)
+    transform: rotateY(360deg);
   }
 }
 
@@ -68,12 +66,11 @@
 .sectionCartina p {
   width: 38rem;
   padding: 2rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: oblique;
   /* color: white; */
   font-weight: 500;
 }
-
 
 .cartina {
   background-image: url(./piemonte\ cartina.jpg);
@@ -83,10 +80,7 @@
   background-position-y: center;
   width: 28rem;
   height: 33rem;
-
 }
-
-
 
 .istruzioni h3 {
   text-align: center;
@@ -104,11 +98,10 @@
   justify-content: center;
 }
 
-
-
 .p {
   text-align: center;
   color: var(--primary);
+  margin: 30px;
 }
 
 .SectionCard {
@@ -118,10 +111,6 @@
   flex-wrap: wrap;
   padding: 1rem;
 }
-
-
-
-
 
 @media screen and (max-width: 1204px) {
   .esplora h1 {
@@ -135,9 +124,6 @@
   .SectionCard {
     gap: 2rem;
   }
-
-
-
 }
 
 @media screen and (max-width: 604px) {
@@ -145,5 +131,4 @@
     width: 100%;
     padding: 2rem;
   }
-
 }

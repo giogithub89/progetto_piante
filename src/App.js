@@ -4,8 +4,9 @@ import Homepage from "./pages/Homepage";
 import Esplora from "./pages/Esplora";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import InsertNewCard from "./Component/InsertNewCard/InsertNewCard";
-import Product from "./pages/Product";
+import Animals from "./pages/Animals";
 import Plants from "./pages/Plants";
+import Places from "./pages/Places";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
           <Route index element={<Homepage />} />
           <Route path="esplora" element={<Esplora />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
-          <Route path="InsertNewCards" element={<InsertNewCard />} />
-          <Route path="product/:id" element={<Product />} />
+          <Route path="add-new-item" element={<InsertNewCard />} />
+          <Route path="animals/:id" element={<Animals />} />
           <Route path="plants/:id" element={<Plants />} />
+          <Route path="places/:id" element={<Places />} />
         </Route>
       </Routes>
     </div>
